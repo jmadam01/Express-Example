@@ -22,11 +22,13 @@ This is a simple SQLite database that interfaces with a Node.js application
 
 ### Executing program
 
-* Make sure terminal window is in the directory of the application. Once there run the "node app.js" command to run it
+* Make sure terminal window is in the directory of the application. Once there run the node command to start.
+* 
+```
+node app.js
+```
 * If you need to use the debugger, while in the debugging window, make sure that "Run Script:start" is selected in the dropdown menu towards the top of the screen.
-```
-code blocks for commands
-```
+
 
 ## Authors
 
