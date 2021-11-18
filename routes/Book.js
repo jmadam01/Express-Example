@@ -5,7 +5,7 @@ var book_controller = require('../controllers/BookController')
 
 router.get('/', book_controller.get_books);
 
-router.get('/bookid',book_controller.get_book)
+router.get('/:id',book_controller.get_book)
 
 router.get('/test', book_controller.get_book_test);
 
