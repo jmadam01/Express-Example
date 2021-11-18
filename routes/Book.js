@@ -2,8 +2,12 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/api/book', function (req, res) {
-    res.render('index', { title: 'Express' });
-});
+var book_controller = require('../controllers/BookController')
+
+router.get('/', book_controller.get_books);
+
+router.get('/bookid',book_controller.get_book)
+
+router.get('/test', book_controller.test);
 
 module.exports = router;

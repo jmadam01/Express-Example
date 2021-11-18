@@ -2,7 +2,7 @@ const Book = require('../models/Book');
 
 const sqlite = require('sqlite3').verbose();
 
-class InfromationRepository{
+class BookRepository{
 
     
     constructor(db){
@@ -71,14 +71,14 @@ class InfromationRepository{
          db.serialize(()=>{
  
  
-             db.each('SELECT bookName as name, bookId as id, bookSummary as summary, bookPublisher as publisher, bookAuthor as author FROM Book WHERE bookID = ' + id, (err,row)=>{
+             db.each('SELECT bookName as name, bookId as id, bookSummary as summary, bookPublisher as publisher, bookAuthor as author FROM Book WHERE bookId =' + id, (err,row)=>{
          
                  if(err){
          
                      return console.error(err.message + err.Database, + err.sqlite);
          
                  }
-                 
+                 console.log(new Book(row.id, row.name, row.author,row.publisher,row.summary));
                  return new Book(row.id, row.name, row.author,row.publisher,row.summary);
          
              })
@@ -147,4 +147,4 @@ class InfromationRepository{
 
 }
 
-module.exports = InfromationRepository;
+module.exports = BookRepository;
