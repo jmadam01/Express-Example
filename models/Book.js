@@ -1,5 +1,5 @@
 const BookDto = require('../dtos/BookDto');
-
+const sqlite = require('sqlite3');
 class Book{
 
     constructor(bookID, bookName,bookAuthor, bookPublisher,bookSummary){
@@ -18,6 +18,8 @@ class Book{
         return new BookDto(this._bookName,this._bookAuthor,this._bookPublisher,this._bookSummary);
 
     }
+
+ 
 
 }
 

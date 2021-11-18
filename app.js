@@ -6,7 +6,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var bookRepository = require('./repository/BookRepository');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 const sqlite = require('sqlite3').verbose();

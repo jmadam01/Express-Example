@@ -1,4 +1,3 @@
-'use strict';
 var express = require('express');
 var router = express.Router();
 
@@ -8,6 +7,6 @@ router.get('/', book_controller.get_books);
 
 router.get('/bookid',book_controller.get_book)
 
-router.get('/test', book_controller.test);
+router.get('/test', book_controller.get_book_test);
 
 module.exports = router;
