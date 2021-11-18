@@ -52,7 +52,7 @@ exports.get_books = function(req,res){
 
 }
 
-exports.get_book = function(req,res,next){
+exports.get_book = function(req,res){
 
     let db = new sqlite.Database('./data/Information.db',sqlite.OPEN_READWRITE, (err) => {
 
@@ -68,7 +68,7 @@ exports.get_book = function(req,res,next){
        db.serialize(()=>{
     
     
-           db.each('SELECT bookName as name, bookId as id, bookSummary as summary, bookPublisher as publisher, bookAuthor as author FROM Book WHERE bookId = ' + req.query.id, (err,row)=>{
+           db.each('SELECT bookName as name, bookId as id, bookSummary as summary, bookPublisher as publisher, bookAuthor as author FROM Book WHERE bookId = ' + req.params.id, (err,row)=>{
        
                if(err){
        
@@ -76,11 +76,7 @@ exports.get_book = function(req,res,next){
     
                }
                var nbook = new Book(row.id, row.name, row.author,row.publisher,row.summary)
-               res.set({
-                'Content-Type': 'text/plain',
-                'Content-Length': '123',
-                'ETag': '12345'
-                });
+
                res.send(JSON.stringify(nbook));
            })
          
