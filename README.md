@@ -23,7 +23,6 @@ This is a simple SQLite database that interfaces with a Node.js application
 ### Executing program
 
 * Make sure terminal window is in the directory of the application. Once there run the node command to start.
-* 
 ```
 node app.js
 ```
